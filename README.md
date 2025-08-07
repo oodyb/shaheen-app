@@ -11,5 +11,5 @@ npm run dev
 
 3. Open http://localhost:3000 from your terminal to see the results.
 
-Important! To successfully run the project you must add a `.env file and a `firebase.json to root folder filled with required keys. To acquire those keys, please contact me at:
+Important! To successfully run the project you must add a `.env file and a `firebase.js to root folder filled with required keys. To acquire those keys, please contact me at:
  * alwaleed.b@hotmail.com
