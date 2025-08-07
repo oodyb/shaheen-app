@@ -1,0 +1,68 @@
+#login-title {
+  text-align: center;
+  color: var(--color-primary, #004AAD);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.inputs {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+
+}
+
+.inputs:focus {
+  outline: none;
+  border-color: var(--color-primary, #004AAD);
+  box-shadow: 0 0 0 2px rgba(0, 74, 173, 0.2);
+}
+
+.inputs::placeholder {
+  color: #9CA3AF;
+  font-size: 0.95rem;
+}
+
+#submit {
+  background-color: var(--color-primary, #004AAD);
+  color: white;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#submit:hover {
+  background-color: #003080;
+}
+
+#register-login {
+  color: #666;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#register {
+  background-color: transparent;
+  color: var(--color-primary, #004AAD);
+  border: 1px solid var(--color-primary, #004AAD);
+  padding: 0.75rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#register:hover {
+  background-color: var(--color-primary, #004AAD);
+  color: white;
+}

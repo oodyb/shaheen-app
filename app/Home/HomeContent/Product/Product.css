@@ -1,0 +1,517 @@
+@keyframes premium-glow {
+  0% {
+    box-shadow: 0 0 12px rgba(204, 136, 68, 0.2), 0 0 24px rgba(204, 136, 68, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(204, 136, 68, 0.45), 0 0 60px rgba(204, 136, 68, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 12px rgba(204, 136, 68, 0.2), 0 0 24px rgba(204, 136, 68, 0.1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-6px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -75%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 370px;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow, 0 2px 8px rgba(0, 0, 0, 0.08));
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  max-width: 220px;
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.product-buttons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.product h3 {
+  min-height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.product:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(2deg);
+  border: 1px solid rgba(204, 136, 68, 0.35);
+  box-shadow: 0 0 30px rgba(204, 136, 68, 0.45), 0 0 60px rgba(204, 136, 68, 0.2);
+}
+
+.product:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(204, 136, 68, 0.45), 0 0 60px rgba(204, 136, 68, 0.2);
+  animation: premium-glow 1.5s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.product::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  animation: shimmer 3.5s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product:hover::before {
+  animation-play-state: paused;
+}
+
+.products-grid .product {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.products-grid .product:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.products-grid .product:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.products-grid .product:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.product>img {
+  max-width: 100%;
+  height: 130px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.product>h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+  margin: 0;
+}
+
+.product>p {
+  color: var(--color-accent, #FF6600);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.product>a,
+.recommend-btn,
+.compare-btn {
+  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.re-compare-btn {
+  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #FF6600;
+  color: white;
+}
+
+.product>a {
+  background-color: var(--color-primary, #004AAD);
+  color: white;
+}
+
+.product>a:hover {
+  background-color: #003080;
+}
+
+.recommend-btn {
+  background-color: var(--color-accent, #FF6600);
+  color: white;
+}
+
+.recommend-btn:hover {
+  background-color: #d45700;
+}
+
+.compare-btn {
+  background-color: #004aad;
+  color: white;
+}
+
+.compare-btn:hover {
+  background-color: #003080;
+}
+
+.modal {
+  position: relative;
+  background: white;
+  padding: 2rem 2.5rem 2.5rem;
+  max-width: 1200px;
+  min-width:450px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.recommendation-card {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  background: #fdfdfd;
+  transition: box-shadow 0.3s;
+}
+
+.recommendation-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.recommendation-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.view-btn {
+  background-color: var(--color-primary, #004AAD);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #003080;
+}
+
+.site {
+  background-color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.site a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #004AAD;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.site a:hover {
+  background-color: #003080;
+}
+
+.site-modal-product {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.site-modal-product img {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.site-modal-product h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.site-modal-price {
+  font-size: 0.9rem;
+  color: #ff6600;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.comparison-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.comparison-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  width: 180px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+
+.comparison-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-card h4 {
+  font-size: 0.9rem;
+  color: #004AAD;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+}
+
+.comparison-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.comparison-price {
+  color: #FF6600;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open.modal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close.modal {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.recommend-btn,
+.compare-btn,
+.re-compare-btn {
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.recommend-btn:hover,
+.compare-btn:hover,
+.re-compare-btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.ReactModal__Content--after-open.modal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close.modal {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.wishlist-star {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-star:hover {
+  transform: scale(1.15);
+}
+
+.wishlist-star svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.5;
+  color: #999;
+}
+
+.modal-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  width: 180px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+
+.modal-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.modal-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+}
+
+.modal-card p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0.5rem 0;
+}

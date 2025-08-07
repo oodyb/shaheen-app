@@ -1,0 +1,6 @@
+[
+  {"name":"next-dev","duration":428665,"timestamp":347733004741,"id":1,"tags":{},"startTime":1745148697272,"traceId":"57dce112dfc76892"},
+  {"name":"next-dev","duration":778559,"timestamp":121936287921,"id":1,"tags":{},"startTime":1745158858750,"traceId":"fbb76f12bfb0ec35"},
+  {"name":"next-dev","duration":952206,"timestamp":172654503069,"id":1,"tags":{},"startTime":1745209576965,"traceId":"71254502f8bade17"}
+]
+[{"name":"next-dev","duration":468502,"timestamp":13040076754,"id":1,"tags":{},"startTime":1745251376250,"traceId":"d1790cf26d274f70"}]

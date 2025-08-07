@@ -1,0 +1,26 @@
+{
+  "name": "shaheen",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "dotenv": "^16.5.0",
+    "firebase": "^11.6.0",
+    "fuzzball": "^2.2.2",
+    "lucide-react": "^0.503.0",
+    "modal": "^1.2.0",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-modal": "^3.15.1"
+  },
+  "devDependencies": {
+    "prisma": "^6.6.0"
+  }
+}
